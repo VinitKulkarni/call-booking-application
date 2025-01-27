@@ -5,7 +5,9 @@ const routes = require('./routes');
 const cors = require('cors')
 
 const app = express();
-app.use(cors())
+app.use(cors({
+    origin: "*"
+}))
 
 const connectDB = require('./config/db');
 const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
